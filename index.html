@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Humsafar — Find Someone Who Makes Every Moment Special. Meet new people, discover meaningful connections and find your Humsafar.">
+  <title>Humsafar ♥ Find Your Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ ANIMATED BACKGROUND ============ -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="bg-circle ring-1"></div>
+    <div class="bg-circle ring-2"></div>
+    <div class="bg-circle ring-3"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" data-nav-home>
+        <span class="logo-heart">♥</span> HUMSAFAR
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#discover">Discover</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#games">Game Club</a></li>
+        <li><a href="#calls">Calls</a></li>
+        <li><a href="#messages">Messages</a></li>
+        <li><a href="#profile">Profile</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <span class="notif-dot"></span>
+        </button>
+        <button class="icon-btn" id="heartBtn" aria-label="Favorites" title="Favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.1.9-4.5 2.5C10.6 3.9 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+          <span class="heart-count" id="favCount">0</span>
+        </button>
+        <div class="avatar-mini" id="avatarMini" title="Your Profile">
+          <img src="https://i.pravatar.cc/80?img=12" alt="You">
+        </div>
+        <a href="#" class="btn btn-ghost btn-sm" id="navLoginBtn">Login</a>
+        <a href="#" class="btn btn-grad btn-sm" id="navSignupBtn">Sign Up</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <span class="eyebrow">♥ Welcome to modern love</span>
+          <h1>Find Someone Who Makes <span class="gradient-text">Every Moment</span> Special.</h1>
+          <p>Meet new people, discover meaningful connections and find your Humsafar.</p>
+          <div class="hero-btns">
+            <a href="#match" class="btn btn-grad btn-lg">Find Your Match</a>
+            <a href="#discover" class="btn btn-glass btn-lg">Explore People</a>
+          </div>
+          <div class="hero-stats-mini">
+            <div><strong>10K+</strong><span>Members</span></div>
+            <div><strong>5K+</strong><span>Connections</span></div>
+            <div><strong>2K+</strong><span>Matches</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" id="heroProfiles">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISCOVER ============ -->
+    <section class="section" id="discover">
+      <div class="section-head reveal">
+        <span class="eyebrow">Explore</span>
+        <h2>Discover Your <span class="gradient-text">Connection</span></h2>
+        <p>Swipe, like and connect with people who share your vibe.</p>
+        <div class="search-bar glass">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="discoverSearch" placeholder="Search by name, city or interest...">
+        </div>
+      </div>
+      <div class="cards-grid" id="discoverGrid"><!-- JS injects --></div>
+    </section>
+
+    <!-- ============ MATCHING EXPERIENCE ============ -->
+    <section class="section section-center" id="match">
+      <div class="section-head reveal">
+        <span class="eyebrow">Match</span>
+        <h2>Your Next <span class="gradient-text">Match</span> Awaits</h2>
+        <p>Like the card to see if it's the start of something beautiful.</p>
+      </div>
+      <div class="match-stage" id="matchStage">
+        <div class="match-card" id="matchCard">
+          <div class="match-media">
+            <img src="https://i.pravatar.cc/500?img=47" alt="Sarah">
+            <div class="match-badge online-dot"></div>
+            <div class="match-info">
+              <h3>Sarah, 23</h3>
+              <span>📍 Islamabad</span>
+            </div>
+          </div>
+          <div class="match-meta">
+            <p>"I love long walks, London-style coffee and late-night talks. Looking for my travel partner in crime."</p>
+            <div class="tag-row">
+              <span class="tag">☕ Coffee</span>
+              <span class="tag">✈️ Travel</span>
+              <span class="tag">🎧 Music</span>
+              <span class="tag">📚 Books</span>
+            </div>
+          </div>
+        </div>
+        <div class="match-actions">
+          <button class="round-btn pass" id="btnPass" aria-label="Pass" title="Pass">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+          <button class="round-btn like" id="btnLike" aria-label="Like" title="Like">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.1.9-4.5 2.5C10.6 3.9 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+          </button>
+          <button class="round-btn superlike" id="btnSuper" aria-label="Super Like" title="Super Like">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 17.3 5.8 21l1.6-6.9L2 9.4l7.1-.6L12 2l2.9 6.8 7.1.6-5.4 4.7L18.2 21Z"/></svg>
+          </button>
+        </div>
+        <p class="match-hint">❤️ Like · ❌ Pass · ⭐ Super Like</p>
+      </div>
+    </section>
+
+    <!-- ============ DATE IDEAS ============ -->
+    <section class="section" id="dates">
+      <div class="section-head reveal">
+        <span class="eyebrow">Date Ideas</span>
+        <h2>Plan a Date Worth <span class="gradient-text">Remembering</span></h2>
+        <p>Handpicked ideas to make every meeting special.</p>
+      </div>
+      <div class="cards-grid cols-3" id="datesGrid"><!-- JS injects --></div>
+    </section>
+
+    <!-- ============ GAME CLUB ============ -->
+    <section class="section" id="games">
+      <div class="section-head reveal">
+        <span class="eyebrow">Game Club 🎮</span>
+        <h2>Have Fun <span class="gradient-text">Together</span></h2>
+        <p>Icebreakers and games that bring you closer.</p>
+      </div>
+      <div class="cards-grid cols-3" id="gamesGrid"><!-- JS injects --></div>
+      <div class="game-modal-backdrop" id="gameModal">
+        <div class="modal glass game-modal">
+          <button class="modal-close" data-close-modal>&times;</button>
+          <div class="game-modal-emoji" id="gameModalEmoji">🎮</div>
+          <h3 id="gameModalTitle">Game</h3>
+          <p id="gameModalDesc"></p>
+          <ul class="game-q-list" id="gameQuestions"></ul>
+          <button class="btn btn-grad" id="gameStartBtn">Start Game</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALLS ============ -->
+    <section class="section" id="calls">
+      <div class="section-head reveal">
+        <span class="eyebrow">Calls 💗</span>
+        <h2>Hear Their <span class="gradient-text">Voice</span></h2>
+        <p>Your matches are just a call away.</p>
+      </div>
+      <div class="cards-grid cols-contact" id="callsGrid"><!-- JS injects --></div>
+    </section>
+
+    <!-- ============ MESSAGES ============ -->
+    <section class="section" id="messages">
+      <div class="section-head reveal">
+        <span class="eyebrow">Messages</span>
+        <h2>Your <span class="gradient-text">Conversations</span></h2>
+        <p>Keep the spark alive, one text at a time.</p>
+      </div>
+      <div class="chat-wrap glass reveal">
+        <div class="chat-list" id="chatList"><!-- JS injects --></div>
+        <div class="chat-window">
+          <div class="chat-header">
+            <img src="https://i.pravatar.cc/60?img=47" alt="Sarah" id="chatAvatar">
+            <div>
+              <h4 id="chatName">Sarah</h4>
+              <span class="online-text">🟢 Online</span>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody"><!-- messages --></div>
+          <div class="chat-input-row">
+            <button class="chat-btn" id="emojiBtn" aria-label="Emoji">😊</button>
+            <button class="chat-btn" id="attachBtn" aria-label="Attach">📎</button>
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button class="btn btn-grad btn-sm" id="sendBtn">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREMIUM PROFILES ============ -->
+    <section class="section" id="premium">
+      <div class="section-head reveal">
+        <span class="eyebrow">Premium ✨</span>
+        <h2>People You <span class="gradient-text">May Like</span></h2>
+        <p>Hand-picked profiles waiting to meet you.</p>
+        <div class="filter-bar glass reveal">
+          <div class="filter-group">
+            <label for="filterAge">Age</label>
+            <select id="filterAge">
+              <option value="all">Any age</option>
+              <option value="18-24">18 – 24</option>
+              <option value="25-32">25 – 32</option>
+              <option value="33+">33 +</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterLocation">Location</label>
+            <select id="filterLocation">
+              <option value="all">All cities</option>
+              <option>Karachi</option>
+              <option>Lahore</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterInterest">Interests</label>
+            <select id="filterInterest">
+              <option value="all">All interests</option>
+              <option>Coffee</option>
+              <option>Travel</option>
+              <option>Photography</option>
+              <option>Music</option>
+              <option>Art</option>
+              <option>Food</option>
+            </select>
+          </div>
+          <button class="filter-chip" data-filter="online">Online Now</button>
+          <button class="filter-chip" data-filter="new">New Members</button>
+        </div>
+      </div>
+      <div class="cards-grid cols-3" id="premiumGrid"><!-- JS injects --></div>
+    </section>
+
+    <!-- ============ PROFILE PAGE SECTION ============ -->
+    <section class="section" id="profile">
+      <div class="section-head reveal">
+        <span class="eyebrow">Profile</span>
+        <h2>Your <span class="gradient-text">Story</span></h2>
+        <p>This is how the world sees you. Em, not bad at all. 😉</p>
+      </div>
+      <div class="profile-page glass reveal">
+        <div class="profile-cover">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&auto=format&fit=crop&q=80" alt="Cover">
+          <div class="cover-overlay"></div>
+          <img src="https://i.pravatar.cc/240?img=12" alt="Profile" class="profile-avatar">
+          <div class="profile-name-row">
+            <h2>You (Rehan) <span class="online-text">🟢 Online</span></h2>
+            <span class="profile-loc">📍 Lahore, Pakistan</span>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-grad" data-like>💗 Like</button>
+            <button class="btn btn-glass" data-msg>💬 Message</button>
+            <button class="btn btn-glass" data-call>📞 Call</button>
+            <button class="btn btn-outline" data-super>⭐ Super Like</button>
+          </div>
+        </div>
+        <div class="profile-tabs">
+          <button class="tab-btn active" data-tab="about">About</button>
+          <button class="tab-btn" data-tab="photos">Photos</button>
+          <button class="tab-btn" data-tab="interests">Interests</button>
+        </div>
+        <div class="tab-panel active" id="tab-about">
+          <p class="profile-bio">"Designer, daydreamer and always up for chai at 2am. Looking for a Humsafar who writes, laughs and travels with me."</p>
+          <div class="profile-facts">
+            <div><strong>Age:</strong> 26</div>
+            <div><strong>Height:</strong> 5'10"</div>
+            <div><strong>Job:</strong> Product Designer</div>
+            <div><strong>Looking for:</strong> Serious + Fun connection</div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-photos">
+          <div class="photo-grid">
+            <div class="photo-tile" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80')"></div>
+            <div class="photo-tile" style="background-image:url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&q=80')"></div>
+            <div class="photo-tile" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80')"></div>
+            <div class="photo-tile" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80')"></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-interests">
+          <div class="tag-row big">
+            <span class="tag">🎨 Design</span>
+            <span class="tag">🏍️ Riding</span>
+            <span class="tag">📸 Photography</span>
+            <span class="tag">🎬 Films</span>
+            <span class="tag">☕ Chai</span>
+            <span class="tag">🌙 Night walks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATISTICS ============ -->
+    <section class="section stats-section" id="stats">
+      <div class="stats-grid">
+        <div class="stat-item reveal"><h3 class="counter" data-target="10000" data-suffix="+">0</h3><span>Happy Members</span></div>
+        <div class="stat-item reveal"><h3 class="counter" data-target="5000" data-suffix="+">0</h3><span>Connections Made</span></div>
+        <div class="stat-item reveal"><h3 class="counter" data-target="2000" data-suffix="+">0</h3><span>Successful Matches</span></div>
+        <div class="stat-item reveal"><h3 class="counter" data-target="24" data-suffix="/7">0</h3><span>Active Community</span></div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" id="stories">
+      <div class="section-head reveal">
+        <span class="eyebrow">Stories</span>
+        <h2>Love Stories From <span class="gradient-text">Humsafar</span></h2>
+      </div>
+      <div class="cards-grid cols-3 testimonial-grid" id="storiesGrid"><!-- JS injects --></div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-heart">♥</span> HUMSAFAR</a>
+        <p>Made for meaningful connections.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram" class="social-btn">Insta</a>
+          <a href="#" aria-label="Facebook" class="social-btn">FB</a>
+          <a href="#" aria-label="TikTok" class="social-btn">TikTok</a>
+          <a href="#" aria-label="X" class="social-btn">X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a><a href="#">Safety</a><a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a><a href="#">Safety Tips</a><a href="#">Community</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Humsafar. Made for meaningful connections.</div>
+  </footer>
+
+  <!-- ============ NOTIFICATION DROPDOWN ============ -->
+  <div class="notif-panel glass" id="notifPanel">
+    <h4>Notifications</h4>
+    <div id="notifList"></div>
+  </div>
+
+  <!-- ============ FAVORITES DRAWER ============ -->
+  <div class="fav-panel glass" id="favPanel">
+    <h4>Favorites 💗</h4>
+    <div id="favList"></div>
+  </div>
+
+  <!-- ============ MATCH MODAL ============ -->
+  <div class="modal-backdrop" id="matchModal">
+    <div class="modal glass match-modal">
+      <div class="match-spark">💕</div>
+      <h2>It's a Match!</h2>
+      <p>You and <strong id="matchName">Sarah</strong> liked each other.</p>
+      <div class="match-avatars">
+        <img src="https://i.pravatar.cc/120?img=12" alt="You">
+        <span>💕</span>
+        <img src="https://i.pravatar.cc/120?img=47" alt="Match" id="matchAvatar">
+      </div>
+      <div class="match-modal-btns">
+        <button class="btn btn-grad" data-close-modal>Start Chat</button>
+        <button class="btn btn-glass" data-close-modal>Keep Discovering</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AUTH MODALS ============ -->
+  <div class="modal-backdrop auth-backdrop" id="authModal">
+    <div class="modal glass auth-modal">
+      <button class="modal-close" data-close-modal>&times;</button>
+
+      <!-- LOGIN -->
+      <div class="auth-view" id="loginView">
+        <div class="auth-emoji">💕</div>
+        <h2>Welcome Back</h2>
+        <p>Good to see you again, Humsafar.</p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="loginPass">Password</label>
+            <input type="password" id="loginPass" placeholder="Your password" required>
+          </div>
+          <p class="form-error" id="loginError"></p>
+          <button type="submit" class="btn btn-grad btn-block">Login</button>
+        </form>
+        <button class="btn btn-google">G &nbsp;Continue with Google</button>
+        <p class="auth-switch">New here? <a href="#" data-auth-switch="register">Create an account</a></p>
+      </div>
+
+      <!-- SIGNUP (progress-style) -->
+      <div class="auth-view" id="registerView" hidden>
+        <div class="auth-emoji">✨</div>
+        <h2>Create Your Humsafar Account</h2>
+        <div class="progress-dots" id="signupDots">
+          <span class="active"></span><span></span><span></span>
+        </div>
+        <form id="signupForm" novalidate>
+          <div class="signup-step" data-step="0">
+            <div class="field"><label>Your Name</label><input type="text" id="suName" placeholder="e.g. Rehan" required></div>
+            <div class="field"><label>Email</label><input type="email" id="suEmail" placeholder="you@example.com" required></div>
+            <div class="field"><label>Password</label><input type="password" id="suPass" placeholder="Min 6 characters" required></div>
+          </div>
+          <div class="signup-step" data-step="1" hidden>
+            <div class="field"><label>Age</label><input type="number" id="suAge" min="18" max="99" placeholder="e.g. 26" required></div>
+            <div class="field"><label>Gender</label>
+              <div class="pill-row">
+                <button type="button" class="pill" data-gender>Female</button>
+                <button type="button" class="pill" data-gender>Male</button>
+                <button type="button" class="pill" data-gender>Other</button>
+              </div>
+            </div>
+          </div>
+          <div class="signup-step" data-step="2" hidden>
+            <div class="field"><label>Location</label>
+              <select id="suCity"><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Multan</option><option>Rawalpindi</option></select>
+            </div>
+            <div class="field"><label>What are you looking for?</label>
+              <div class="pill-row">
+                <button type="button" class="pill" data-look>Friendship</button>
+                <button type="button" class="pill" data-look>Serious Relationship</button>
+                <button type="button" class="pill" data-look>Something Casual</button>
+              </div>
+            </div>
+          </div>
+          <p class="form-error" id="signupError"></p>
+          <div class="signup-nav">
+            <button type="button" class="btn btn-glass" id="signupBack" hidden>Back</button>
+            <button type="button" class="btn btn-grad" id="signupNext">Next</button>
+            <button type="submit" class="btn btn-grad" id="signupSubmit" hidden>Create Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
