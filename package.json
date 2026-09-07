@@ -1,0 +1,29 @@
+{
+  "name": "humsafar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Humsafar — Pakistani dating platform. Express + node:sqlite API, frontend SPA + admin dashboard, single Vercel function deployment.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "migrate": "node server/src/db/migrate.js",
+    "seed": "node server/seed/seed.js",
+    "setup": "node server/src/db/migrate.js && node server/seed/seed.js",
+    "vercel-build": "node -e \"require('./server/seed/seed').seed().catch(e=>{console.error(e);process.exit(1)})\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.15"
+  }
+}

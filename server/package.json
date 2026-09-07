@@ -1,0 +1,32 @@
+{
+  "name": "humsafar-server",
+  "version": "1.0.0",
+  "description": "Humsafar dating platform backend — Express + node:sqlite",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "migrate": "node src/db/migrate.js",
+    "seed": "node seed/seed.js",
+    "setup": "node src/db/migrate.js && node seed/seed.js"
+  },
+  "keywords": [
+    "dating",
+    "humsafar",
+    "express",
+    "sqlite"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.15"
+  }
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# SQLite database files (regenerate via `npm run setup`)
+*.db
+*.db-wal
+*.db-shm
+server/data/
+
+# User uploads (runtime-generated; regenerated per demo reset)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel local output
+.vercel/
