@@ -12,8 +12,7 @@
     "dev": "node server/server.js",
     "migrate": "node server/src/db/migrate.js",
     "seed": "node server/seed/seed.js",
-    "setup": "node server/src/db/migrate.js && node server/seed/seed.js",
-    "vercel-build": "node -e \"require('./server/seed/seed').seed().catch(e=>{console.error(e);process.exit(1)})\""
+    "setup": "node server/src/db/migrate.js && node server/seed/seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
